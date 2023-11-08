@@ -21,4 +21,11 @@ make changes in the file
 <git status>
 <git add .>
 <git commit -m " ">
-13. <>
+<git push> 
+<git status>
+to delete a branch
+every branch should be deleted after it done adding the data to main 
+<git branch>
+<git checkout main> to come to main branch
+<git branch> to see if your in the main branch or not 
+<git branch -D (file name)> to delete the branch that was created
