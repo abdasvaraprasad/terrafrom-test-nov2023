@@ -32,3 +32,19 @@ every branch should be deleted after it done adding the data to main
 <git checkout main> to come to main branch
 <git branch> to see if your in the main branch or not 
 <git branch -D (file name)> to delete the branch that was created
+module "kafka_instance" {
+  source = "cloudposse/ec2-instance/aws"
+
+
+  # Cloud Posse recommends pinning every module to a specific version
+  # version     = "x.x.x"
+  ssh_key_pair                = var.ssh_key_pair
+  vpc_id                      = var.vpc_id
+  security_groups             = var.security_groups
+  subnet                      = var.subnet
+  associate_public_ip_address = true
+  name                        = "kafka"
+  namespace                   = "eg"
+  stage                       = "dev"
+  additional_ips_count        = 1
+  ebs_volume_count            = 2
